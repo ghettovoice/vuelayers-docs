@@ -21,7 +21,7 @@ ${packageJson.description}
 */`,
   themeColor: primaryColor,
   replaces: {
-    C_PKG_VERSION: '0.8.1',
+    C_PKG_VERSION: '0.9.0',
     C_PKG_REPOSITORY: 'https://github.com/ghettovoice/vuelayers',
     C_PKG_AUTHOR_HOMEPAGE: 'https://ghettovoice.github.io/',
     C_PKG_AUTHOR_NAME: 'Vladimir Vershinin',
