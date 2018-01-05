@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path')
+const fs = require('fs-extra')
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -10,6 +11,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -66,7 +70,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,
-      template: './src/index.ejs',
+      template: path.resolve(__dirname, '../src/index.ejs'),
       inject: true,
       minify: {
         removeComments: true,
@@ -77,6 +81,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency',
+
+      serviceWorker: `<script>${getServiceWorkerSrc()}</script>`,
+      gaUID: config.replaces.C_GOOGLE_UID,
+      primaryColor: config.themeColor,
     }),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
@@ -120,6 +128,41 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*'],
       },
     ]),
+
+    new webpack.BannerPlugin({
+      banner: config.banner,
+      raw: true,
+      entryOnly: true,
+    }),
+
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, '../static/img/logo.svg'),
+      prefix: utils.assetsPath('img/'),
+      title: config.name,
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false,
+      },
+    }),
+
+    new PreloadWebpackPlugin({
+      rel: 'prefetch',
+    }),
+    new SWPrecacheWebpackPlugin({
+      cacheId: `${config.name}-docs-app`,
+      filename: 'service-worker.js',
+      minify: true,
+      navigateFallback: config.publicPath,
+      staticFileGlobsIgnorePatterns: [/dist-docs\/.*\.html/, /img\/\.cache$/],
+    }),
   ],
 })
 
@@ -147,3 +190,10 @@ if (config.build.bundleAnalyzerReport) {
 }
 
 module.exports = webpackConfig
+
+function getServiceWorkerSrc () {
+  let source = fs.readFileSync(path.resolve(__dirname, './service-worker-registration.js'), 'utf-8')
+  source = source.replace('__SCRIPT_URL__', '/service-worker.js')
+
+  return source
+}

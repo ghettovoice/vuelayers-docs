@@ -18,5 +18,10 @@ module.exports = {
     source: 'src',
     img: 'src',
     image: 'xlink:href',
+    'vl-style-icon': 'src',
+  },
+  template: {
+    render: require('pug').render,
+    doctype: 'html',
   },
 }

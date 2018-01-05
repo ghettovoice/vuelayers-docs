@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang="pug" xmlns: xmlns:>
   div(:class="[$options.name]")
     section.map
       vl-map(ref="map" ':def-controls'="false" ':load-tiles-while-animating'="true" ':load-tiles-while-interacting'="true")
@@ -9,7 +9,7 @@
             vl-feature(v-if="ctx.position" id="position-feature")
               vl-geom-point(:coordinates="ctx.position")
               vl-style-box
-                vl-style-icon(src="../static/img/marker.png" ':scale'="0.4" ':anchor'="[0.5, 1]")
+                vl-style-icon(src="/static/img/marker.png" ':scale'="0.4" ':anchor'="[0.5, 1]")
 
         vl-layer-tile
           vl-source-sputnik
@@ -17,7 +17,7 @@
     vld-hero
       div.intro.content
         h1.title.
-          #[img(src="../static/img/logo.svg" width="100" alt="VueLayers Logo")]
+          #[img(src="/static/img/logo.svg" width="100" alt="VueLayers Logo")]
           #[br]
           VueLayers
         p.subtitle.

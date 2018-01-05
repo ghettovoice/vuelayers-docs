@@ -3,8 +3,34 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+const packageJson = require('../package')
+
+const primaryColor = '#1e88e5'
 
 module.exports = {
+  name: packageJson.name,
+  banner: `/*!
+${packageJson.name}
+${packageJson.description}
+
+@package ${packageJson.name}
+@author ${packageJson.author}
+@version ${packageJson.version}
+@license ${packageJson.license}
+@copyright (c) ${new Date().getFullYear()}, ${packageJson.author}
+*/`,
+  themeColor: primaryColor,
+  replaces: {
+    C_PKG_VERSION: '0.8.1',
+    C_PKG_REPOSITORY: 'https://github.com/ghettovoice/vuelayers',
+    C_PKG_AUTHOR_HOMEPAGE: 'https://ghettovoice.github.io/',
+    C_PKG_AUTHOR_NAME: 'Vladimir Vershinin',
+    C_PKG_AUTHOR_USER: 'ghettovoice',
+    C_PKG_LICENSE_URL: 'https://github.com/ghettovoice/vuelayers/blob/master/LICENSE',
+    C_PKG_LICENSE_NAME: 'MIT',
+    C_GOOGLE_UID: 'UA-98870917-3',
+    C_PRIMARY_COLOR: primaryColor,
+  },
   dev: {
 
     // Paths
@@ -14,8 +40,8 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    port: 8085, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
@@ -76,6 +102,6 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report
-  }
+    bundleAnalyzerReport: process.env.npm_config_report,
+  },
 }

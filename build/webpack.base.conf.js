@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path')
+const StringReplacePlugin = require('string-replace-webpack-plugin')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
@@ -26,7 +27,8 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    filename: '[name].js',
+    filename: utils.assetsPath('js/[name].js'),
+    chunkFilename: utils.assetsPath('js/[id].[chunkhash:7].js'),
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath,
@@ -39,6 +41,15 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(js|vue|md)$/,
+        loader: varsReplaceLoader(),
+        enforce: 'pre',
+        include: [
+          resolve('src'),
+          resolve('test'),
+        ],
+      },
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
@@ -92,4 +103,20 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty',
   },
+  plugins: [
+    new StringReplacePlugin(),
+  ],
+}
+
+function varsReplaceLoader () {
+  return StringReplacePlugin.replace({
+    replacements: [compileVarsReplacement()],
+  })
+}
+
+function compileVarsReplacement () {
+  return {
+    pattern: new RegExp(Object.keys(config.replaces).join('|'), 'g'),
+    replacement: match => config.replaces[match],
+  }
 }

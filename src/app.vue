@@ -7,7 +7,7 @@
         vld-sidebar
           router-link.name(slot="logo", to="/", title="VueLayers Homepage", exact-active-class="is-active")
             div
-              img(src="./static/img/logo.svg" alt="VueLayers Logo")
+              img(src="/static/img/logo.svg" alt="VueLayers Logo")
             div
               span VueLayers
           a(
@@ -34,7 +34,7 @@
         vld-navbar.is-hidden-tablet(':menu-active.sync'="navbarMenuActive")
           vld-navbar-item.logo.has-text-left(slot="brand" link="/" title="VueLayers Homepage", :router="true")
             div
-              img(src="./static/img/logo.svg" alt="VueLayers Logo")
+              img(src="/static/img/logo.svg" alt="VueLayers Logo")
             div
               span VueLayers
           vld-navbar-item(

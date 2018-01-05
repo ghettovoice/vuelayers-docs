@@ -29,9 +29,16 @@ exports.cssLoaders = function (options) {
     },
   }
 
+  const resolveUrlLoader = {
+    loader: 'resolve-url-loader',
+    options: {
+      sourceMap: options.sourceMap,
+    },
+  }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader, resolveUrlLoader] : [cssLoader, resolveUrlLoader]
 
     if (loader) {
       loaders.push({
@@ -59,8 +66,19 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', {indentedSyntax: true}),
-    scss: generateLoaders('sass'),
+    sass: generateLoaders('sass', {
+      indentedSyntax: true,
+      includePaths: [
+        path.resolve(__dirname, '..'),
+        path.resolve(__dirname, '../node_modules'),
+      ],
+    }),
+    scss: generateLoaders('sass', {
+      includePaths: [
+        path.resolve(__dirname, '..'),
+        path.resolve(__dirname, '../node_modules'),
+      ],
+    }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus'),
   }

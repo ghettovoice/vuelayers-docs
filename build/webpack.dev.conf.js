@@ -1,4 +1,5 @@
 'use strict'
+const path = require('path')
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -47,8 +48,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.ejs',
+      template: path.resolve(__dirname, '../src/index.ejs'),
       inject: true,
+      serviceWorker: '',
+      gaUID: config.replaces.C_GOOGLE_UID,
+      primaryColor: config.themeColor,
     }),
   ],
 })
