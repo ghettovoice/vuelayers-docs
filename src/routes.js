@@ -47,13 +47,13 @@ export default [
     },
     component: () => import('./pages/modules/tile-layer.vue'),
   },
-  // {
-  //   path: '/modules/vector-layer',
-  //   meta: {
-  //     title: 'Vector layer',
-  //   },
-  //   component: () => import('./pages/modules/vector-layer.vue'),
-  // },
+  {
+    path: '/modules/vector-layer',
+    meta: {
+      title: 'Vector layer',
+    },
+    component: () => import('./pages/modules/vector-layer.vue'),
+  },
   // redirects
   // todo remove later
   {

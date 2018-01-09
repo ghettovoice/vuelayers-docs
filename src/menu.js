@@ -27,10 +27,10 @@ export default [
         link: '/modules/tile-layer',
         title: 'Tile layer',
       },
-      // {
-      //   link: '/modules/vector-layer',
-      //   title: 'Vector layer',
-      // },
+      {
+        link: '/modules/vector-layer',
+        title: 'Vector layer',
+      },
     ],
   },
 ]

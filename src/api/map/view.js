@@ -80,7 +80,7 @@ export default {
     },
     {
       name: 'projection',
-      description: '',
+      description: '<p>The view projection.</p>',
       type: 'string',
       required: false,
       sync: false,
@@ -88,7 +88,7 @@ export default {
     },
     {
       name: 'resolution',
-      description: '',
+      description: '<p>The initial resolution for the view.</p>',
       type: 'number',
       required: false,
       sync: true,
@@ -96,7 +96,8 @@ export default {
     },
     {
       name: 'resolutions',
-      description: '',
+      description: `<p>Resolutions to determine the resolution constraint. If set the <code>maxResolution</code>, 
+                    <code>minResolution</code>, <code>minZoom</code>, <code>maxZoom</code>, and <code>zoomFactor</code> options are ignored.</p>`,
       type: 'array',
       required: false,
       sync: false,

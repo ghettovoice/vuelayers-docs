@@ -2,7 +2,7 @@
   div(':class'="[$options.name]")
     vld-hero(':bold'="true" color="is-info")
       h1.title Map
-      h2.subtitle Start point of every VueLayers based application
+      h2.subtitle Basic map related components
 
     section.section
       vld-markdown.

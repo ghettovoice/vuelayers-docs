@@ -4,7 +4,7 @@
       vl-map(ref="map" ':def-controls'="false" ':load-tiles-while-animating'="true" ':load-tiles-while-interacting'="true")
         vl-view(ref="view" ':zoom'="3" ':min-zoom'="2")
 
-        vl-geoloc('@update:position'="onUpdatePosition")
+        vl-geoloc('@update:position'="onUpdatePosition" projection="EPSG:3857")
           template(slot-scope="ctx")
             vl-feature(v-if="ctx.position" id="position-feature")
               vl-geom-point(:coordinates="ctx.position")
@@ -59,14 +59,12 @@
 </template>
 
 <script>
-  import { core } from 'vuelayers'
-
   const methods = {
     onUpdatePosition (coordinate) {
       if (!this.zoomedToPosition) {
         this.zoomedToPosition = true
         this.$refs.view.animate({
-          center: core.projHelper.fromLonLat(coordinate, 'EPSG:3857'),
+          center: coordinate,
           zoom: 12,
           duration: 1000,
         })

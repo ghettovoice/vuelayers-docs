@@ -85,6 +85,20 @@
         Vue.use(VueLayers)
         // now you are ready to go further
         // ...
+      b-message(type="is-info")
+        p.
+          From the #[b v0.9] release all components by default accepts coordinates in projection of the map view like in OpenLayers.
+          Projection of the view may be defined in #[code vl-view] component, #[b EPSG:3857] used by default.
+        p To return the old behavior there is global option was introduced:
+        vld-code(lang="js").
+          import Vue from 'vue'
+          import VueLayers from 'vuelayers'
+          // all input/output coordinates, GeoJSON features in EPSG:4326 projection
+          // like in < 0.9 version
+          Vue.use(VueLayers, {
+            bindToProj: 'EPSG:4326',
+          })
+          // Now all components properties, events and methods works with coordinates in EPSG:4326 projection
 
       h4 Browser
       vld-code(lang="html").

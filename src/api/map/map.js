@@ -3,7 +3,7 @@ export default {
     {
       name: 'controls',
       description: `<p>Options for default controls added to the map by default. Set to <code>false</code> to disable 
-                    all map controls. Objectvalue is used to configure controls.</p>`,
+                    all map controls. Object value is used to configure controls.</p>`,
       type: 'Object, boolean',
       required: false,
       sync: false,
@@ -184,7 +184,7 @@ export default {
     },
     {
       name: 'getCoordinateFromPixel',
-      description: `Get the coordinate for a given pixel. This returns a coordinate in the <b>EPSG:4326</b> projection.`,
+      description: `Get the coordinate for a given pixel. This returns a coordinate in the view projection.`,
       arguments: [
         {
           name: 'pixel',
