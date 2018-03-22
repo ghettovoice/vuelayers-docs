@@ -1,30 +1,15 @@
 # vuelayers-docs
 
-> VueLayers Docs
+> VueLayers Documentation
 
 ## Build Setup
 
 ``` bash
+git clone --recurse-submodules -j8 https://github.com/ghettovoice/vuelayers-docs.git
+
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+# start dev server at http://localhost:4000/
+npm start
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

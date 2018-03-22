@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VueLayers Homepage</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content="Vue components to work with OpenLayers">
+  <meta name="keywords" content="vuelayers, vuejs, vuejs plugins, vuejs components, openlayers, ol, web maps, vuejs maps">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
+  <style>
+    .cover-main pre {
+      position: relative;
+      -webkit-font-smoothing: initial;
+      line-height: 1.5rem;
+      margin: 1.2em 0;
+      overflow: auto;
+      padding: 0 1.4rem;
+      position: relative;
+      word-wrap: normal;
+      ackground-color: #f8f8f8;
+      font-family: Roboto Mono,Monaco,courier,monospace;
+    }
+  </style>
+</head>
+<body>
+  <div data-app id="app">
+    Please wait...
+  </div>
+
+  <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
+  <script>
+    window.$docsify = {
+      el: '#app',
+      name: 'VueLayers',
+      repo: 'ghettovoice/vuelayers',
+      auto2top: true,
+      homepage: 'Home.md',
+      basePath: '/pages',
+      themeColor: '#1e88e5',
+      externalLinkTarget: '_blank',
+      ga: 'UA-98870917-3',
+      coverpage: true,
+      plugins: [
+        EditOnGithubPlugin.create('https://github.com/ghettovoice/vuelayers-docs/blob/master/pages/')
+      ],
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/front-matter.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code/index.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+</body>
+</html>
