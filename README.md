@@ -13,3 +13,7 @@ npm install
 # start dev server at http://localhost:4000/
 npm start
 ```
+
+---
+
+Powered by [docsify](https://docsify.js.org "A magical documentation site generator")

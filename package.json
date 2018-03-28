@@ -6,7 +6,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "docsify start .",
+    "start": "docsify start public",
     "test": "echo 'Nothing to test' && exit 0"
   },
   "dependencies": {},
