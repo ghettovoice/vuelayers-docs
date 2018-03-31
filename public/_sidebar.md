@@ -1,9 +1,9 @@
 * Overview
 
   * [Quick start](quickstart.md)
-  * [Demo app](demo.md)
+  * [Demo](demo.md)
 
 * Components
-
+  
   * [Map](component/map.md)
   * [Feature](component/feature.md)

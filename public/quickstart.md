@@ -96,6 +96,19 @@ Vue.use(OsmSource)
 Vue.use(GeoLoc)
 ```
 
+By default all components accepts coordinates in map view projection (**EPSG:3857** by default)
+but you can bind all components to accept and return coordinates in another projection with
+`bindToProj` global option. This rule applies only for plain coordinates, GeoJSON encoded features or 
+geometries. It works only as thin projection transform layer between Vue and OpenLayers therefore
+internally OpenLayers objects would still use current projection of the map view.
+
+```js
+// all input/output coordinates, GeoJSON features in EPSG:4326 projection
+Vue.use(VueLayers, {
+  bindToProj: 'EPSG:4326',
+})
+```
+
 Now you are ready to build your awesome GIS application. Check the [VueLayers official demo](demo.md) to get 
 more ideas what you can make with VueLayers.
 
