@@ -118,8 +118,8 @@ Simple map with OSM layer example (editable)
 
 <script v-pre type="text/x-template" id="example">
   <template>
-    <div id="map">
-      <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true">
+    <div>
+      <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" style="height: 400px">
         <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
         <vl-geoloc @update:position="geolocPosition = $event" projection="EPSG:3857">
@@ -137,7 +137,7 @@ Simple map with OSM layer example (editable)
           <vl-source-osm></vl-source-osm>
         </vl-layer-tile>
       </vl-map>
-      <div>
+      <div style="padding: 20px">
         Zoom: {{ zoom }}<br>
         Center: {{ center }}<br>
         Rotation: {{ rotation }}<br>
@@ -147,8 +147,8 @@ Simple map with OSM layer example (editable)
   </template>
 
   <script>
-    module.exports = {
-      data: function () {
+    export default {
+      data () {
         return { 
           zoom: 2,
           center: [0, 0],

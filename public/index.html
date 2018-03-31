@@ -22,8 +22,7 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
 
-    <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.min.css">
-
+  <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.min.css">
   <link rel="stylesheet" href="//unpkg.com/vuelayers@next/lib/style.min.css">
 
   <style>
@@ -41,7 +40,31 @@
     }
 
     .markdown-section {
-      max-width: 1440px;
+      max-width: 1000px;
+    }
+
+    .vuep {
+      flex-direction: column;
+      clear: both;
+      overflow: hidden;
+      box-shadow: 0 0 13px #a0a0a0;
+      height: auto;
+      margin: 30px 0;
+    }
+
+    .vuep-editor {
+      height: 400px;
+    }
+
+    .vuep-editor,
+    .vuep-preview {
+      width: auto;
+      overflow: visible;
+      margin-right: 0;
+    }
+
+    .vuep-preview {
+      padding: 0;
     }
   </style>
 </head>
@@ -51,12 +74,14 @@
   </div>
 
   <script src="//unpkg.com/openlayers/dist/ol.js"></script>
-
+  <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
   <script src="//unpkg.com/vue/dist/vue.min.js"></script>
   <script src="//unpkg.com/vuep/dist/vuep.min.js"></script>  
   <script src="//unpkg.com/vuelayers@next/lib/index.umd.js"></script>
 
   <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
+  <script src="//unpkg.com/docsify-copy-code/index.js"></script>
+
   <script>
     Vue.use(VueLayers)
 
@@ -74,10 +99,14 @@
       executeScript: true,
       loadSidebar: true,
       maxLevel: 4,
-      subMaxLevel: 2,
+      subMaxLevel: 3,
       plugins: [
-        EditOnGithubPlugin.create('https://github.com/ghettovoice/vuelayers-docs/blob/master/pages/')
+        EditOnGithubPlugin.create('https://github.com/ghettovoice/vuelayers-docs/blob/master/pages/'),
+        DocsifyCopyCodePlugin.init(),
       ],
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
     }
   </script>
 
@@ -85,7 +114,6 @@
   <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/front-matter.min.js"></script>
-  <script src="//unpkg.com/docsify-copy-code/index.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
 </body>
 </html>

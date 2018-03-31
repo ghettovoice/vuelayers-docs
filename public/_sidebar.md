@@ -5,11 +5,12 @@
 
 * Components
   
-  * [Map](component/map.md)
-  * [Feature](component/feature.md)
+  * [vl-map](component/map.md)
+  * [vl-view](component/view.md)
+  * [vl-feature](component/feature.md)
 
   * Layer
 
-    * [VectorLayer](component/vector-layer.md)
-    * [TileLayer](component/tile-layer.md)
-    * [ImageLayer](component/image-layer.md)
+    * [vl-layer-vector](component/vector-layer.md)
+    * [vl-layer-tile](component/tile-layer.md)
+    * [vl-layer-image](component/image-layer.md)
