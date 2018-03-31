@@ -87,13 +87,13 @@ Vue.use(VueLayers)
 // or individual components
 
 import Vue from 'vue'
-import { Map, TileLayer, OsmSource, GeoLoc } from 'vuelayers'
+import { Map, TileLayer, OsmSource, Geoloc } from 'vuelayers'
 import 'vuelayers/lib/style.css' // needs css-loader
 
 Vue.use(Map)
 Vue.use(TileLayer)
 Vue.use(OsmSource)
-Vue.use(GeoLoc)
+Vue.use(Geoloc)
 ```
 
 By default all components accepts coordinates in map view projection (**EPSG:3857** by default)
