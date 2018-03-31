@@ -1,1 +1,1 @@
-# VueLayers Demo application
+# VueLayers Demo
