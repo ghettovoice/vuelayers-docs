@@ -22,6 +22,38 @@ import 'vuelayers/lib/style.css'
 Vue.use(Map)
 ```
 
+## Usage
+
+Example of simple map. Also see documentation of [`vl-view`](component/view.md), 
+[`vl-layer-tile`](component/tile-layer.md) and [`vl-source-osm`](component/osm-source.md) 
+components.
+
+<vuep template="#example"></vuep>
+
+<script v-pre type="text/x-template" id="example">
+  <template>
+    <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" style="height: 400px">
+        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
+
+        <vl-layer-tile id="osm">
+            <vl-source-osm></vl-source-osm>
+        </vl-layer-tile>
+    </vl-map>
+  </template>
+
+  <script>
+    export default {
+      data () {
+        return { 
+          zoom: 2,
+          center: [0, 0],
+          rotation: 0,
+        }
+      },
+    }
+  </script>
+</script>
+
 ## Properties
 
 ### controls
@@ -95,3 +127,83 @@ and the first supported used.
 
 Root element `tabindex` attribute value. Value should be provided to allow 
 keyboard events on map.
+
+## Events
+
+Pointer events that emits [`ol.MapBrowserEvent`](https://openlayers.org/en/latest/apidoc/ol.MapBrowserEvent.html)
+
+- `click`
+- `dblclick`
+- `singleclick`
+- `pointerdrag`
+- `pointermove` 
+
+Other events that emits [`ol.MapEvent`](https://openlayers.org/en/latest/apidoc/ol.MapEvent.html)
+
+- `movestart`
+- `moveend`
+- `postrender`
+- `precompose`
+- `postcompose`
+
+## Methods
+
+### focus()
+
+Triggers focus on map container.
+
+### forEachFeatureAtPixel(pixel, callback, options = {})
+
+- **Arguments**:
+    - `pixel {number[]}`
+    - `callback {function(ol.Feature, ?ol.layer.Layer): *}` 
+      Feature callback. The callback will be called with two arguments: OpenLayers `feature` 
+      at the pixel and `layer` of the feature (will be null for unmanaged layers). 
+      To stop detection, callback functions can return a truthy value.
+    - `[options] {Object | undefined}`
+        - `layerFilter {function(ol.layer.Layer): boolean}` Layer filter function.
+        - `hitTolerance {number | undefined}` Hit-detection tolerance in pixels.
+          Default is `0`.
+- **Returns**: `*` Truthy value returned from the callback.
+
+Detect features that intersect a pixel on the viewport, and execute a callback 
+with each intersecting feature. Layers included in the detection can be configured 
+through the `layerFilter` option in `options`.
+
+### forEachLayerAtPixel(pixel, callback, layerFilter)
+
+- **Arguments**:
+    - `pixel {number[]}`
+    - `callback {function(ol.layer.Layer, ?(number[] | Uint8Array)): *}` Layer callback.
+      The callback will receive `layer` and array representing `[R, G, B, A]` pixel values.
+      To stop detection, callback functions can return a truthy value.
+    - `[layerFilter] {function(ol.layer.Layer): boolean | undefined}` Layer filter function.
+- **Returns**: `*` Truthy value returned from the callback.
+
+Detect layers that have a color value at a pixel on the viewport, and execute 
+a callback with each matching layer. Layers included in the detection can be 
+configured through `layerFilter`.
+
+### getCoordinateFromPixel(pixel)
+
+- **Arguments**:
+    - `pixel {number[]}`
+- **Returns**: `number[]` Coordinates of the pixel in map view projection.
+
+Get the coordinate for a given pixel. 
+
+### refresh()
+
+- **Returns**: `{Promise<void>}`
+
+Updates map size and re-renders map.
+
+### render()
+
+- **Returns**: `{Promise<void>}`
+
+Request a map rendering (at the next animation frame).
+
+### updateSize()
+
+Updates map size.
