@@ -7,9 +7,9 @@ all other VueLayers components and has one `default` slot to place them all.
 Usually you will use it together with [`vl-view`](component/view.md) component 
 to setup `zoom`, `center`, `projection` and other view related propeties for the map.
 
-## Versions
+## Module system
 
-* [ES2015 module](https://unpkg.com/vuelayers@0.10.0-beta.6/lib/_esm2015/map/)
+* [ES6 module](https://unpkg.com/vuelayers@0.10.0-beta.6/lib/_esm2015/map/)
 * [CommonJS module](https://unpkg.com/vuelayers@0.10.0-beta.6/lib/map/)
 
 ## Installation
@@ -67,7 +67,7 @@ all map controls. Object value is used to configure controls.
 ### keyboard-event-target
 
 - **Type**: `string, Element, Document`
-- **Defalt**: `this.$el`
+- **Default**: `this.$el`
 
 The element to listen to keyboard events on. For example, if this option is set 
 to `document` the keyboard interactions will always trigger. If this option is 
@@ -127,6 +127,12 @@ and the first supported used.
 
 Root element `tabindex` attribute value. Value should be provided to allow 
 keyboard events on map.
+
+### data-projection
+
+- **Type**: `string`
+
+Projection of input/output plain coordinates in properties, events and etc.
 
 ## Events
 

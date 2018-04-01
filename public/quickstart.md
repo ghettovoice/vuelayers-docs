@@ -96,16 +96,20 @@ Vue.use(OsmSource)
 Vue.use(Geoloc)
 ```
 
+### Global data projection
+
 By default all components accepts coordinates in map view projection (**EPSG:3857** by default)
 but you can bind all components to accept and return coordinates in another projection with
-`bindToProj` global option. This rule applies only for plain coordinates, GeoJSON encoded features or 
+`dataProjection` global option or with `data-projection` property on each component. 
+
+This rule applies only for plain coordinates, GeoJSON encoded features or 
 geometries. It works only as thin projection transform layer between Vue and OpenLayers therefore
 internally OpenLayers objects would still use current projection of the map view.
 
 ```js
 // all input/output coordinates, GeoJSON features in EPSG:4326 projection
 Vue.use(VueLayers, {
-  bindToProj: 'EPSG:4326',
+  dataProjection: 'EPSG:4326',
 })
 ```
 
@@ -120,9 +124,9 @@ Simple map with OSM layer example (editable)
   <template>
     <div>
       <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" style="height: 400px">
-        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
+        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation" data-projection="EPSG:4326"></vl-view>
 
-        <vl-geoloc @update:position="geolocPosition = $event" projection="EPSG:3857">
+        <vl-geoloc @update:position="geolocPosition = $event" data-projection="EPSG:4326">
           <template slot-scope="geoloc">
             <vl-feature v-if="geoloc.position" id="position-feature">
               <vl-geom-point :coordinates="geoloc.position"></vl-geom-point>
