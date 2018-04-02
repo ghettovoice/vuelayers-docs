@@ -28,9 +28,9 @@ Example of simple map. Also see documentation of [`vl-view`](component/view.md),
 [`vl-layer-tile`](component/tile-layer.md) and [`vl-source-osm`](component/osm-source.md) 
 components.
 
-<vuep template="#example"></vuep>
+<vuep template="#usage-example"></vuep>
 
-<script v-pre type="text/x-template" id="example">
+<script v-pre type="text/x-template" id="usage-example">
   <template>
     <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" style="height: 400px">
         <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
