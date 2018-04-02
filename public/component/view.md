@@ -7,26 +7,14 @@ to change the **center**, **resolution** and **rotation** of the map.
 
 ## Module system
 
-* [ES6 module](https://unpkg.com/vuelayers@0.10.0-beta.6/lib/_esm2015/map/)
-* [CommonJS module](https://unpkg.com/vuelayers@0.10.0-beta.6/lib/map/)
-
-## Installation
-
-Same as [`vl-map`](component/map.md) installation.
-
-```js
-import Vue from 'vue'
-import { Map } from 'vuelayers'
-import 'vuelayers/lib/style.css'
-// registers vl-map and vl-view components
-Vue.use(Map)
-```
+* [ES6 module](https://unpkg.com/vuelayers/lib/_esm2015/map/)
+* [CommonJS module](https://unpkg.com/vuelayers/lib/map/)
 
 ## Usage
 
-Example of simple map. Also see documentation of [`vl-view`](component/view.md), 
-[`vl-layer-tile`](component/tile-layer.md) and [`vl-source-osm`](component/osm-source.md) 
-components.
+Example of simple map.   
+Also see documentation of [`vl-view`](component/view.md), [`vl-layer-tile`](component/tile-layer.md) 
+and [`vl-source-osm`](component/osm-source.md) components.
 
 <vuep template="#usage-example"></vuep>
 
@@ -218,13 +206,13 @@ The zoom factor used to determine the resolution constraint.
 
 ## Events
 
-- `update:center` - fires when view center changed.
+- `update:center` Fires when view center changed.
   Emits the new center coordinate in projection on the view (see [`projection`](#projection) and [`data-projection`](#data-projection))
-- `update:zoom` - fires when view zoom changed.
+- `update:zoom` Fires when view zoom changed.
   Emits the new zoom level value.
-- `update:resolution` - fires when view resolution changed.
+- `update:resolution` Fires when view resolution changed.
   Emits the new view resolution value.
-- `update:rotation` - fires when view rotation changed.
+- `update:rotation` Fires when view rotation changed.
   Emits the new rotation value.
 
 ## Methods

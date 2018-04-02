@@ -9,24 +9,14 @@ to setup `zoom`, `center`, `projection` and other view related propeties for the
 
 ## Module system
 
-* [ES6 module](https://unpkg.com/vuelayers@0.10.0-beta.6/lib/_esm2015/map/)
-* [CommonJS module](https://unpkg.com/vuelayers@0.10.0-beta.6/lib/map/)
-
-## Installation
-
-```js
-import Vue from 'vue'
-import { Map } from 'vuelayers'
-import 'vuelayers/lib/style.css'
-// registers vl-map and vl-view components
-Vue.use(Map)
-```
+* [ES6 module](https://unpkg.com/vuelayers/lib/_esm2015/map/)
+* [CommonJS module](https://unpkg.com/vuelayers/lib/map/)
 
 ## Usage
 
-Example of simple map. Also see documentation of [`vl-view`](component/view.md), 
-[`vl-layer-tile`](component/tile-layer.md) and [`vl-source-osm`](component/osm-source.md) 
-components.
+Example of simple map.  
+Also see documentation of [`vl-view`](component/view.md), [`vl-layer-tile`](component/tile-layer.md) 
+and [`vl-source-osm`](component/osm-source.md) components.
 
 <vuep template="#usage-example"></vuep>
 
