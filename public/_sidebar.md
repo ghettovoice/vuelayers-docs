@@ -8,6 +8,7 @@
   * [vl-map](component/map.md)
   * [vl-view](component/view.md)
   * [vl-feature](component/feature.md)
+  * [vl-geoloc](component/geoloc.md)
 
   * Layer
 

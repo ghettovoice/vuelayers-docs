@@ -2,7 +2,7 @@
 
 > Geographic feature representation
 
-The `vl-feature` component is a part of **Feature** module. It provides
+`vl-feature` component is a part of **Feature** module. It provides
 properties similar the **GeoJSON** feature.  It has one **default slot** and 
 acts like geometry container for [`vl-geom-*`](component/point-geom.md) components, 
 without geometry component nothing will be rendered.
@@ -22,7 +22,7 @@ components placed inside default slot.
 ## Usage
 
 Features with different geometries.  
-Also documentation of [`vl-geom-point`](component/point-geom.md), [`vl-geom-line-string`](component/line-string-geom.md) 
+See also documentation of [`vl-geom-point`](component/point-geom.md), [`vl-geom-line-string`](component/line-string-geom.md) 
 and [`vl-geom-polygon`](component/polygon-geom.md).
 
 <vuep template="#usage-example"></vuep>

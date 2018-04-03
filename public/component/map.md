@@ -2,7 +2,7 @@
 
 > The core component of VueLayers
 
-The `vl-map` component is a part of **Map** module. It is a main container for 
+`vl-map` component is a part of **Map** module. It is a main container for 
 all other VueLayers components and has one `default` slot to place them all. 
 Usually you will use it together with [`vl-view`](component/view.md) component 
 to setup `zoom`, `center`, `projection` and other view related propeties for the map.
@@ -15,7 +15,7 @@ to setup `zoom`, `center`, `projection` and other view related propeties for the
 ## Usage
 
 Example of simple map.  
-Also see documentation of [`vl-view`](component/view.md), [`vl-layer-tile`](component/tile-layer.md) 
+See also documentation of [`vl-view`](component/view.md), [`vl-layer-tile`](component/tile-layer.md) 
 and [`vl-source-osm`](component/osm-source.md) components.
 
 <vuep template="#usage-example"></vuep>

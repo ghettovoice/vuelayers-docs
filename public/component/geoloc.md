@@ -1,0 +1,67 @@
+# vl-geoloc
+
+> HTML5 Geolocation wrapper
+
+`vl-geoloc` is a part of **Geoloc** module. It provides HTML5 Geolocation 
+capabilities as a Vue component. The [Geolocation API](https://www.w3.org/TR/geolocation-API/) 
+is used to locate a user's position. You can place it to the **default slot** of
+[`vl-map`](component/map.md) component.
+
+## Module system
+
+* [ES6 module](https://unpkg.com/vuelayers/lib/_esm2015/geoloc/)
+* [CommonJS module](https://unpkg.com/vuelayers/lib/geoloc/)
+
+## Usage
+
+Example below shows basic use case of `vl-geoloc` component and how you
+can render some geolocation marker.  
+See also documentation of [`vl-feature`](component/feature.md).
+
+!> **NOTE** You should allow geolocation tracking in your browser
+
+<vuep template="#usage-example"></vuep>
+
+<script v-pre type="text/x-template" id="usage-example">
+  <template>
+    <div>
+      <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" style="height: 400px">
+        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation" data-projection="EPSG:4326"></vl-view>
+
+        <vl-geoloc @update:position="geolocPosition = $event" data-projection="EPSG:4326">
+          <template slot-scope="geoloc">
+            <vl-feature v-if="geoloc.position" id="position-feature">
+              <vl-geom-point :coordinates="geoloc.position"></vl-geom-point>
+              <vl-style-box>
+                <vl-style-icon src="_media/marker.png" :scale="0.4" :anchor="[0.5, 1]"></vl-style-icon>
+              </vl-style-box>
+            </vl-feature>
+          </template>
+        </vl-geoloc>
+
+        <vl-layer-tile id="osm">
+          <vl-source-osm></vl-source-osm>
+        </vl-layer-tile>
+      </vl-map>
+      <div style="padding: 20px">
+        Zoom: {{ zoom }}<br>
+        Center: {{ center }}<br>
+        Rotation: {{ rotation }}<br>
+        My geolocation: {{ geolocPosition }}
+      </div>
+    </div>
+  </template>
+
+  <script>
+    export default {
+      data () {
+        return { 
+          zoom: 2,
+          center: [0, 0],
+          rotation: 0,
+          geolocPosition: undefined,
+        }
+      },
+    }
+  </script>
+</script>
