@@ -65,3 +65,45 @@ See also documentation of [`vl-feature`](component/feature.md).
     }
   </script>
 </script>
+
+## Properties
+
+### tracking
+
+- **Type**: `boolean`
+- **Default**: `true`
+
+Enables / disables tracking.
+
+### tracking-options
+
+- **Type**: `Object`
+- **Default**: `undefined`
+
+Tracking options. See [PositionOptions](https://www.w3.org/TR/geolocation-API/#position_options_interface) documentation.
+
+### projection
+
+- **Type**: `string`
+- **Default**: `EPSG:3857`
+
+The projection the position is provided to **default slot**.
+
+### data-projection
+
+- **Type**: `string`
+- **Default**: `undefined`
+
+The projection the position is reported in events. By default position coordinates
+will be in the projection from [`projection`](#projection) property.
+
+## Events
+
+All events emit the new property value as argument.
+
+- `update:position`
+- `update:accuracy`
+- `update:altitude`
+- `update:altitudeaccuracy`
+- `update:heading`
+- `update:speed`
