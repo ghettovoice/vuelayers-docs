@@ -100,7 +100,7 @@ Vue.use(Geoloc)
 
 By default all components accepts coordinates in map view projection (**EPSG:3857** by default)
 but you can bind all components to accept and return coordinates in another projection with
-`dataProjection` global option or with `data-projection` property on each component. 
+`dataProjection` global option or with [`data-projection`](component/map.md#data-projection) property on the `vl-map` component. 
 
 This rule applies only for plain coordinates, GeoJSON encoded features or 
 geometries. It works only as thin projection transform layer between Vue and OpenLayers therefore

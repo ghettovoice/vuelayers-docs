@@ -121,8 +121,10 @@ keyboard events on map.
 ### data-projection
 
 - **Type**: `string`
+- **Default**: `undefined`
 
 Projection of input/output plain coordinates in properties, events and etc.
+See [Global data projection](quickstart#global-data-projection) setup guide.
 
 ## Events
 

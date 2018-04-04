@@ -87,16 +87,10 @@ Resolutions to determine the resolution constraint. If set the `max-resolution`,
 - **Type**: `string`
 - **Default**: `EPSG:3857`
 
-The view internal projection. All plain coordinates (`center` property, `update:center` event and etc.) 
-will be in that projection if [`data-projection`](#data-projection) property and [global data projection](quickstart.md#global-data-projection)
-is `undefined`.
-
-### data-projection
-
-- **Type**: `string`
-- **Default**: `undefined`
-
-Projection of input/output plain coordinates in properties, events and etc (`center`, `update:center` and other).
+The view internal projection. This is the projection with which OpenLayers component
+will work (`ol.View`, `ol.Feature` and other that works with geographic data). 
+By all VueLayers components accepts coordinates in the view projection.  
+See also how to setup [Global data projection](quickstart.md#global-data-projection).
 
 ### max-zoom
 
