@@ -9,7 +9,7 @@ to setup `zoom`, `center`, `projection` and other view related propeties for the
 
 ## Module system
 
-* [ES6 module](https://unpkg.com/vuelayers/lib/_esm2015/map/)
+* [ES6 module](https://unpkg.com/vuelayers/lib/_esm/map/)
 * [CommonJS module](https://unpkg.com/vuelayers/lib/map/)
 
 ## Usage

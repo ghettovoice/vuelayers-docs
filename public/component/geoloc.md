@@ -9,7 +9,7 @@ is used to locate a user's position. You can place it to the **default slot** of
 
 ## Module system
 
-* [ES6 module](https://unpkg.com/vuelayers/lib/_esm2015/geoloc/)
+* [ES6 module](https://unpkg.com/vuelayers/lib/_esm/geoloc/)
 * [CommonJS module](https://unpkg.com/vuelayers/lib/geoloc/)
 
 ## Usage

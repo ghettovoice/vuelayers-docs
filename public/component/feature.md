@@ -16,7 +16,7 @@ components placed inside default slot.
 
 ## Module system
 
-* [ES6 module](https://unpkg.com/vuelayers/lib/_esm2015/feature/)
+* [ES6 module](https://unpkg.com/vuelayers/lib/_esm/feature/)
 * [CommonJS module](https://unpkg.com/vuelayers/lib/feature/)
 
 ## Usage

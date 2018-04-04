@@ -7,7 +7,7 @@ to change the **center**, **resolution** and **rotation** of the map.
 
 ## Module system
 
-* [ES6 module](https://unpkg.com/vuelayers/lib/_esm2015/map/)
+* [ES6 module](https://unpkg.com/vuelayers/lib/_esm/map/)
 * [CommonJS module](https://unpkg.com/vuelayers/lib/map/)
 
 ## Usage
