@@ -5,20 +5,22 @@
 
 * Components
   
-  * [vl-map](component/map.md)
-  * [vl-view](component/view.md)
-  * [vl-feature](component/feature.md)
   * [vl-geoloc](component/geoloc.md)
+  * [vl-map](component/map.md)
+  * [vl-feature](component/feature.md)
   * [vl-overlay](component/overlay.md)
+  * [vl-view](component/view.md)
 
   * Layer
 
     * [vl-layer-vector](component/vector-layer.md)
-    * [vl-layer-tile](component/tile-layer.md)
     * [vl-layer-image](component/image-layer.md)
+    * [vl-layer-tile](component/tile-layer.md)
 
   * Source
 
+    * [vl-source-bing-maps](component/bing-maps-source.md)
+    * [vl-source-osm](component/osm-source.md)
     * [vl-source-vector](component/vector-source.md)
 
   * Geometry
@@ -27,9 +29,9 @@
 
   * Interaction
 
-    * [vl-interaction-select](component/select-interaction.md)
     * [vl-interaction-draw](component/draw-interaction.md)
     * [vl-interaction-modify](component/modify-interaction.md)
+    * [vl-interaction-select](component/select-interaction.md)
 
   * Style
 

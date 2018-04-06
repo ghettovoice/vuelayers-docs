@@ -2,12 +2,13 @@
 
 > HTML5 Geolocation wrapper
 
-`vl-geoloc` is a part of **Geoloc** module. It provides HTML5 Geolocation 
-capabilities as a Vue component. The [Geolocation API](https://www.w3.org/TR/geolocation-API/) 
-is used to locate a user's position. You can place it to the **default slot** of
-[`vl-map`](component/map.md) component.
+`vl-geoloc` provides HTML5 Geolocation capabilities as a Vue component. 
+The [Geolocation API](https://www.w3.org/TR/geolocation-API/) is used to locate 
+a user's position. You can place it to the **default slot** of [`vl-map`](component/map.md) component.
 
-## Module system
+## Versions
+
+`vl-geoloc` is a part of **Geoloc** module:
 
 * [ES6 module](https://unpkg.com/vuelayers/lib/_esm/geoloc/)
 * [CommonJS module](https://unpkg.com/vuelayers/lib/geoloc/)
@@ -16,7 +17,7 @@ is used to locate a user's position. You can place it to the **default slot** of
 
 Example below shows basic use case of `vl-geoloc` component and how you
 can render some geolocation marker.  
-See also documentation of [`vl-feature`](component/feature.md).
+See also documentation of [`vl-feature`](component/feature.md) component.
 
 !> **NOTE** You should allow geolocation tracking in your browser
 

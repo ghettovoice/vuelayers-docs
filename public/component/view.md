@@ -2,10 +2,12 @@
 
 > 2D representation of the map
 
-`vl-view` component is a part of **Map** module. It is the component to act upon
-to change the **center**, **resolution** and **rotation** of the map.
+`vl-view` is the component to act upon to change the **center**, **resolution** 
+and **rotation** of the map.
 
-## Module system
+## Versions
+
+`vl-view` component is a part of **Map** module:
 
 * [ES6 module](https://unpkg.com/vuelayers/lib/_esm/map/)
 * [CommonJS module](https://unpkg.com/vuelayers/lib/map/)
@@ -13,8 +15,7 @@ to change the **center**, **resolution** and **rotation** of the map.
 ## Usage
 
 Example of simple map.   
-See also documentation of [`vl-view`](component/view.md), [`vl-layer-tile`](component/tile-layer.md) 
-and [`vl-source-osm`](component/osm-source.md) components.
+See also documentation of [`vl-map`](component/view.md) component.
 
 <vuep template="#usage-example"></vuep>
 
