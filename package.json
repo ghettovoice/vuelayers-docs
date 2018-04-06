@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "docsify start public",
+    "deploy": "gh-pages -d . -r git@github.com:VueLayers/vuelayers.github.io.git -b master",
     "test": "echo 'Nothing to test' && exit 0"
   },
   "dependencies": {},

@@ -90,6 +90,10 @@
   <script src="//unpkg.com/docsify-copy-code/index.js"></script>
 
   <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+
     Vue.use(VueLayers)
 
     window.$docsify = {
