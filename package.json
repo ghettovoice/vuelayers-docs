@@ -12,7 +12,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "docsify-cli": "^4.2.1"
+    "docsify-cli": "^4.2.1",
+    "gh-pages": "^1.1.0"
   },
   "engines": {
     "node": ">= 6.0.0",
