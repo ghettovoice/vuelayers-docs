@@ -123,10 +123,11 @@ Simple map with OSM layer example (editable)
 <script v-pre type="text/x-template" id="example">
   <template>
     <div>
-      <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" style="height: 400px">
-        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation" data-projection="EPSG:4326"></vl-view>
+      <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
+               data-projection="EPSG:4326" style="height: 400px">
+        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
-        <vl-geoloc @update:position="geolocPosition = $event" data-projection="EPSG:4326">
+        <vl-geoloc @update:position="geolocPosition = $event">
           <template slot-scope="geoloc">
             <vl-feature v-if="geoloc.position" id="position-feature">
               <vl-geom-point :coordinates="geoloc.position"></vl-geom-point>
