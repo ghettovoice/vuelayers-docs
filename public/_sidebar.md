@@ -25,7 +25,7 @@
 
   * Geometry
 
-    * [vl-geom-point](component/point.md)
+    * [vl-geom-point](component/point-geom.md)
 
   * Interaction
 

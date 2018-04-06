@@ -9,8 +9,8 @@ this source you should get **API key** at https://www.bingmapsportal.com.
 
 `vl-source-bing-maps` is a part of **BingMapsSource** module:
 
-* [ES6 module](https://unpkg.com/vuelayers/lib/_esm/bing-maps-source/)
-* [CommonJS module](https://unpkg.com/vuelayers/lib/bing-maps-source/)
+* **ES6**: https://unpkg.com/vuelayers/lib/_esm/bing-maps-source/
+* **CommonJS**: https://unpkg.com/vuelayers/lib/bing-maps-source/
 
 ## Usage
 
@@ -21,10 +21,10 @@ this source you should get **API key** at https://www.bingmapsportal.com.
 <script v-pre type="text/x-template" id="usage-example">
   <template>
     <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" style="height: 400px">
-        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation" projection="EPSG:4326"></vl-view>
+        <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
-        <vl-layer-tile id="osm">
-            <vl-source-bing-source :api-key="apiKey" :imagery-set="imagerySet"></vl-source-bing-source>
+        <vl-layer-tile id="bing-maps">
+            <vl-source-bing-maps :api-key="apiKey" :imagery-set="imagerySet"></vl-source-bing-maps>
         </vl-layer-tile>
     </vl-map>
   </template>
@@ -37,7 +37,7 @@ this source you should get **API key** at https://www.bingmapsportal.com.
           center: [0, 0],
           rotation: 0,
           apiKey: 'ArbsA9NX-AZmebC6VyXAnDqjXk6mo2wGCmeYM8EwyDaxKfQhUYyk0jtx6hX5fpMn',
-          imagerySet: 'CanvasGray',
+          imagerySet: 'AerialWithLabels',
         }
       },
     }
